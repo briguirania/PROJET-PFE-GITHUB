@@ -18,6 +18,9 @@ const Commits = ({ currentPullRequestRef }: { currentPullRequestRef: number }) =
     enabled: !!currentPullRequestRef,
     cacheTime: 0,
   })
+  function helloWorld() {
+    console.log('hello worls')
+  }
   console.log(commits, 'data')
   return <div>Commits</div>
 }
