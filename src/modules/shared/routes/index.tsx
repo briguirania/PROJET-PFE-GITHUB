@@ -9,8 +9,8 @@ export type RouteConfig = {
   exact: boolean | null
   path: string
   component: React.ComponentType<any>
-  guard?: React.ComponentType<any> | typeof Fragment
-  layout?: React.ComponentType<any> | typeof Fragment
+  guard?: React.ComponentType<any> | typeof Fragment | undefined
+  layout?: React.ComponentType<any> | typeof Fragment | undefined
 } & RouteProps
 
 export const renderRoutes = (routes: RouteConfig[] = []) => (
