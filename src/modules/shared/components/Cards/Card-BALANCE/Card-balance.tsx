@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { ReactElement, useRef, useState } from 'react'
-
+import './_index.scss'
 export interface IBalanceCard {
   children: ReactElement | ReactElement[]
 }

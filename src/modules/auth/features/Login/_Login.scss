@@ -1,4 +1,5 @@
 @use '../../../shared/assets/styles/abstracts/mixins' as *;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 .login-module {
   height: 100vh;
   width: 100vw;
@@ -18,6 +19,57 @@
     border-radius: 1rem;
     &__title {
       font-size: 2.5rem;
-    }
+    }    
   }
+}
+.login-module__card__title{
+  position: relative;
+  width: 14.41rem;
+  height: 4.84rem;
+  top: -2rem;
+  left: 0.25rem;
+  font-size: 3.2rem;
+  color: white;
+  font-family: 'Nunito';
+}
+.login-module__card__descr{
+  width: 17.5rem;
+  height: 2.6rem;
+  margin-top: -3rem;
+  font-family: 'Nunito';
+  font-weight: 300;
+  font-size: 13.8px;
+  line-height: 20.64px;
+  letter-spacing: 0.34px;
+  color: white;
+}
+.login-module__button{
+  margin-top: 10rem;
+  width: 204.55px;
+  height: 42.99px;
+  border-radius: 8px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(57, 56, 56, 0.4) 25%, 
+    rgba(85, 85, 85, 0.927) 75%, 
+    rgba(118, 118, 118, 0.674) 100%
+  );
+  box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.365);
+  padding: 5px 10px;
+}
+.my-github-img{
+  margin-right: 500px;
+  margin-top: -0.2rem;
+  width: 27.79px;
+  height: 27.79px;
+  margin-left: 1.19px;
+  border-radius: 12.9px;
+  background-color: #FFFFFF;
+
+}
+.text-button-module{
+  color: #FFFFFF;
+  margin-top: -1.9rem;
+  font-family: 'Nunito';
 }

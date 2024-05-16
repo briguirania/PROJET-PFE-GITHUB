@@ -5,7 +5,7 @@ import { Routes, Route, RouteProps } from 'react-router-dom'
 import pages from './routes'
 import LazyLoad from '../components/LazyLoad/LazyLoad'
 
-type RouteConfig = {
+export type RouteConfig = {
   exact: boolean | null
   path: string
   component: React.ComponentType<any>

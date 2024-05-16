@@ -1,9 +1,11 @@
-import sharedRoutes from './sharedRoutes'
-import authRoutes from '../../auth/routes/routes'
+import { RouteConfig } from '.';
+import authRoutes from '../../auth/routes/routes';
+import homeRoute from '../../Home/routes/routes';
 
-const routes = [
-  ...sharedRoutes,
-  ...authRoutes
+ const routes: RouteConfig [] =[
+  ...authRoutes,
+  ...homeRoute
 ]
+
 
 export default routes

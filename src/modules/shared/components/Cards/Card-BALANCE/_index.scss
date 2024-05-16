@@ -1,21 +1,28 @@
 @use '../../../../shared/assets/styles/abstracts/mixins' as *;
 .card-balance {
   position: relative;
-  width: 25rem;
-  height: 30rem;
+  width: 22.8rem;
+  height: 26.25rem;
+  top: 6.2rem;
+  left: 25.5rem;
+  border-radius: 16px;
+  border: 16px;
   @include GlassEffect();
-  padding: 1rem;
+  padding: 3rem;
   @include Flex(column, start);
   overflow: hidden;
   gap: 1rem;
   transition: all 0.2s;
   z-index: 10;
   cursor: pointer;
-  animation: enter 0.5s ease-in-out;
+  animation: enter 0.8s ease-in-out;
   &-title {
     color: white;
     font-size: 3rem;
     font-weight: 500;
+    width: 230.54px;
+    height: 77.5px;
+    top: 17.49px;
   }
   &-description {
     color: white;
