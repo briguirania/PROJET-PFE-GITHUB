@@ -6,6 +6,7 @@ import { fetchGitHubRepositories } from '../shared/store/queries/repo/repo'
 import MainContainer from '../shared/layout/MainContainer/MainContainer'
 import { useNavigate } from 'react-router-dom'
 import { PATH } from '../auth/routes/paths'
+import './_Home.scss'
 
 export default function Home() {
   const navigate = useNavigate()
@@ -30,7 +31,7 @@ export default function Home() {
         <div className="home-container">
           <div className="card-container">
             {data?.map((repo: { id: string; name: string }, i: number) => (
-              <CardSkew key={repo.id} autoColors={i + 1}>
+              <CardSkew key={repo.id} autoColors={i + 1} className="custom-card">
                 <div onClick={() => navigate(PATH.PULL.replace(':id', repo.name!))}>
                   <p>{repo.name}</p>
                 </div>

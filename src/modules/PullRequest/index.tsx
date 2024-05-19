@@ -11,7 +11,8 @@ import { useSearchParams } from 'react-router-dom'
 import { fetchGitHubRepositoryPullsRequests } from '../shared/store/queries/pull'
 import Commits from './Commits'
 import OnePullRequest from './OnePullRequest'
-
+import MainLayout from '../shared/layout/MainLayout/MainLayout'
+import './_index.scss'
 export interface IPullRequest {
   id: string
   title: string
@@ -49,6 +50,7 @@ export default function PullRequests() {
   })
 
   return (
+    <MainLayout>
     <MainContainer
       linkProps={{
         links: [
@@ -70,7 +72,7 @@ export default function PullRequests() {
               <Collapse
                 items={pullRequests?.map((pull: IPullRequest) => ({
                   key: `${pull.number}`,
-                  label: <OnePullRequest />,
+                  label: <OnePullRequest pullRequest={pull}/>,
                   children: <Commits currentPullRequestRef={pull?.number} />,
                 }))}
               />
@@ -79,5 +81,6 @@ export default function PullRequests() {
         </div>
       )}
     </MainContainer>
+    </MainLayout>
   )
 }

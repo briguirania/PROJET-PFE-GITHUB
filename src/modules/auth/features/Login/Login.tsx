@@ -24,7 +24,7 @@ const Login = () => {
         Login via your Github account to get started with our app
       </p>
       <button className="login-module__button" onClick={signInWithGithub}>
-        <GithubIcon style={{ width: '2rem' }} />
+        <GithubIcon className="git-icon" style={{ width: '2rem' }} />
         <p className="text-button-module">login with github</p>
       </button>
     </CardBalance>

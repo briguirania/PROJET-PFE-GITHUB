@@ -21,7 +21,7 @@ const App = () => {
   )
 
   return (
-    <div id={theme}>
+    <div id={'light'}>
       <Helmet>
         <title>Welcome - Github code reviewer</title>
       </Helmet>
