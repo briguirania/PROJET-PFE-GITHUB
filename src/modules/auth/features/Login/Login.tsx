@@ -3,6 +3,7 @@ import CardBalance from '@src/modules/shared/components/Cards/Card-BALANCE/Card-
 import { supabase } from '@src/modules/shared/utils/supabase'
 import { PATH } from '../../routes/paths'
 import './_Login.scss'
+import Canvas from '@src/modules/shared/components/Canvas/Canvas'
 const Login = () => {
   const location = window.location
   async function signInWithGithub() {
@@ -18,7 +19,7 @@ const Login = () => {
     }
   }
   return (
-    <CardBalance>
+    <><CardBalance>
       <p className="login-module__card__title">Welcome</p>
       <p className="login-module__card__descr">
         Login via your Github account to get started with our app
@@ -27,7 +28,7 @@ const Login = () => {
         <GithubIcon className="git-icon" style={{ width: '2rem' }} />
         <p className="text-button-module">login with github</p>
       </button>
-    </CardBalance>
+    </CardBalance><Canvas /></>
   )
 }
 

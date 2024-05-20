@@ -15,7 +15,7 @@ const routes: RouteConfig[] = [
     guard: GuestGuard,
     path: PATH.LOGIN,
     component: lazy(() => import('../features/Login/Login')),
-    layout: (props: any) => <UniverseWrapper {...props} />,
+    layout: (props: any) => <UniverseWrapper {...props} includeGlobe />,
   },
 ]
 

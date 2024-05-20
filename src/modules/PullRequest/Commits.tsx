@@ -5,7 +5,7 @@ import { fetchGitHubPullRequestCommits } from '../shared/store/queries/commits'
 import LoadingScreen from '../shared/components/Loading'
 import NoData from '../shared/components/NoData'
 import Avatar from '../shared/components/Avatar/Avatar'
-
+import './Commits.scss'
 const Commits = ({ currentPullRequestRef }: { currentPullRequestRef: number }) => {
   const { id } = useParams()
   const { user } = useAppSelector((state) => state.auth)
@@ -32,14 +32,16 @@ const Commits = ({ currentPullRequestRef }: { currentPullRequestRef: number }) =
   console.log(commits)
   return(
     <ul className="commits-list">
-    {commits?.map((commit: any) => (
-      <li key={commit?.sha}>
-        <Avatar pic_url={commit.committer.avatar_url!} bordered includeToolTip={{color:'gold', title:commit.author.login}}/>
-        <p>{commit.commit.message}</p>
-        {}
-      </li>
-    ))}
-  </ul>
+      <div className='transparent-box'>
+      <p className='title'>commits list:</p>
+      {commits?.map((commit: any) => (
+        <li className='name-avatar' key={commit?.sha}>
+          <Avatar pic_url={commit.committer.avatar_url!} bordered includeToolTip={{ color: 'gold', title: commit.author.login }} />
+          <p>{commit.commit.message}</p>
+        </li>
+      ))}
+      </div>
+    </ul>
 );
 }
 

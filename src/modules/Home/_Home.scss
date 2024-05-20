@@ -10,7 +10,14 @@
   color: #320ca4;
 }
 .card-container {
-  @include Flex();
+  @include Flex(row, left);
   flex-wrap: wrap;
   width: 100%;
+}
+.title-create{
+  @include Flex(column, start, left);
+}
+.name-status{
+  @include Flex(row, right, start);
+
 }

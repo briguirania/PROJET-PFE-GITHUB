@@ -1,0 +1,48 @@
+@use '../shared/assets/styles/abstracts/mixins' as *;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+.title-create{
+    @include Flex(column, start, left);
+}
+.name-status{
+    @include Flex(row, end, right);
+    text-align: left;
+
+}
+.update-date{
+    font-family: 'Nunito';
+    color: rgb(255, 255, 255);
+}
+.one-pull-request{
+    @include Flex(row, start, right);
+
+}
+.title-pull{
+    font-family: 'Nunito';
+    font-weight: 800;
+    size: 14px;
+    line-height: 20.5px;
+    letter-spacing: 0.34px;
+
+}
+.creation-date{
+    font-family: 'Nunito';
+    font-weight: 500;
+    size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.3px;
+    color: rgb(200, 199, 199, 1);
+}
+.update-date{
+    font-family: 'Nunito';
+    font-weight: 500;
+    size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.3px;
+    color: rgb(200, 199, 199, 1);
+    text-align: left;
+}
+.left-side{
+    @include Flex(column, end, left);
+
+}
