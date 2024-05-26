@@ -20,3 +20,20 @@ export async function fetchGitHubPullRequestCommits(props: {
     message.error('Failed to fetch pull request commits')
   }
 }
+export async function fetchGitHubCommitChanges(props: { repo: string; user: string; ref: string }) {
+  const { user, repo, ref } = props
+  try {
+    const response = await axiosInstance.get(
+      endpoints.getOneCommitChanges
+        .replace(':owner', user)
+        .replace(':repo', repo)
+        .replace(':commitSHA', ref),
+      {
+        headers: { Accept: 'application/vnd.github.v3.diff; charset=utf-8' },
+      }
+    )
+    return response.data
+  } catch (error) {
+    message.error('Failed to fetch pull request commits')
+  }
+}

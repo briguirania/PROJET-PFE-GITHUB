@@ -10,14 +10,18 @@
   color: #320ca4;
 }
 .card-container {
-  @include Flex(row, left);
+  @include Flex();
   flex-wrap: wrap;
   width: 100%;
 }
-.title-create{
+.title-create {
   @include Flex(column, start, left);
 }
-.name-status{
+.name-status {
   @include Flex(row, right, start);
-
+}
+.reposirory-name {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
 }

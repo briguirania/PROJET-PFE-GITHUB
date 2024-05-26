@@ -7,17 +7,18 @@ import MainContainer from '../shared/layout/MainContainer/MainContainer'
 import { useNavigate } from 'react-router-dom'
 import { PATH } from '../auth/routes/paths'
 import './_Home.scss'
+import LoadingScreen from '../shared/components/Loading'
 
 export default function Home() {
   const navigate = useNavigate()
   const { data, isLoading } = useQuery({
     queryFn: () => fetchGitHubRepositories(),
     queryKey: ['repo', {}],
-    cacheTime: 1, // Cache data to reuse without component re-render
-    enabled: true, // Redisplace true with a condition for execution control
+    cacheTime: 1,
+    enabled: true,
   })
   if (isLoading) {
-    return <div className="loading">Loading...</div>
+    return <LoadingScreen size="full" />
   }
   if (!data || data.length === 0) {
     return <NoData title={'No Projects'}></NoData>
@@ -32,7 +33,10 @@ export default function Home() {
           <div className="card-container">
             {data?.map((repo: { id: string; name: string }, i: number) => (
               <CardSkew key={repo.id} autoColors={i + 1} className="custom-card">
-                <div onClick={() => navigate(PATH.PULL.replace(':id', repo.name!))}>
+                <div
+                  onClick={() => navigate(PATH.PULL.replace(':id', repo.name!))}
+                  className="reposirory-name"
+                >
                   <p>{repo.name}</p>
                 </div>
               </CardSkew>

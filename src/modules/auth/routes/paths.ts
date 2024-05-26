@@ -4,5 +4,5 @@ export const PATH = {
   REGISTER: '/register',
   REPO: '/repositories',
   PULL: '/repositories/:id/pullRequest',
-  COMMIT: '',
+  COMMIT: '/repositories/:id/pullRequest/:commitId',
 }
