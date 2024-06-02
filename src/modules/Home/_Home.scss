@@ -2,7 +2,7 @@
 .home-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: right;
   padding: 20px;
 }
 .loading {
@@ -24,4 +24,13 @@
   width: 100%;
   height: 100%;
   padding: 2rem;
+}
+.wrapper .box {
+  justify-content: space-between;
+  align-items: center;
+}
+.card-container{
+  justify-content: space-between;
+  align-items: right;
+  flex-direction:row;
 }

@@ -2,20 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
 .title-create{
-    @include Flex(column, start, left);
+    @include Flex(column, left, start);
+    gap: 10px;
 }
 .name-status{
     @include Flex(row, end, right);
     text-align: left;
+    justify-content: space-between;
+
 
 }
 .update-date{
     font-family: 'Nunito';
     color: rgb(255, 255, 255);
-}
-.one-pull-request{
-    @include Flex(row, start, right);
-
 }
 .title-pull{
     font-family: 'Nunito';
@@ -43,6 +42,16 @@
     text-align: left;
 }
 .left-side{
-    @include Flex(column, end, left);
+    @include Flex(column, end, right);
+    
+}
+.one-pull-request{
+    @include Flex(row, space-between);
 
+    gap: 500px;
+}
+.image-status{
+    width: 25.8px;
+    height: 25.8;
+    margin-top: 29.3;
 }

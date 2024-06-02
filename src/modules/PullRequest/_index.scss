@@ -82,6 +82,3 @@ div.ant-collapse-item.ant-collapse-item-active{
 span.ant-collapse-header-text{
   color: rgb(255, 255, 255);
 }
-.one-pull-request{
-  @include Flex(column, start, start);
-}

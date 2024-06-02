@@ -2,8 +2,17 @@
   width: 100%;
   overflow: hidden;
   &__wrapper {
-    width: 100%;
+    width: 1402px;
     animation: enter 0.3s ease-in-out;
+    border: 2px solid #fefefe93;
+    padding: 1px;
+    margin: 200px;
+    height: 206.72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 20px;
+    left: 18.19px;
   }
   .d2h-file-list-wrapper {
     display: none;
@@ -25,3 +34,4 @@
     background-color: rgba(70, 185, 242, 0.25) !important;
   }
 }
+
