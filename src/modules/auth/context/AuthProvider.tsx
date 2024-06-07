@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import jwtDecode from 'jwt-decode'
 import { useDispatch } from 'react-redux'
 import { clearTokens, getTokens } from '../utils/token'
-import useIsMountedRef from '../hook/useIsMountedRef'
 import { initialise } from '../data/authSlice'
 import { supabase } from '@src/modules/shared/utils/supabase'
 
@@ -15,7 +14,6 @@ interface JwtPayload {
 }
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
-  const isMounted = useIsMountedRef()
   const dispatch = useDispatch()
 
   const isValidToken = (token: string) => {
@@ -25,9 +23,6 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
   }
 
   useEffect(() => {
-    if (!isMounted.current) {
-      return
-    }
     async function fetchUser() {
       const tokens = getTokens()
       if (tokens?.refresh_token && tokens?.refresh_token.length > 2) {
