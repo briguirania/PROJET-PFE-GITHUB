@@ -10,9 +10,13 @@ import MainContainer from '@src/modules/shared/layout/MainContainer/MainContaine
 import { PATH } from '@src/modules/auth/routes/paths'
 import MainLayout from '@src/modules/shared/layout/MainLayout/MainLayout'
 import { id } from 'date-fns/locale'
+import { Modal } from 'antd'
+import StreamComponent from '@src/Sprint5/codeReview'
+import ReviewButton from '@src/modules/shared/components/Buttons/Review'
 const CommitChanges = () => {
   const { id, commitId } = useParams()
   const { user } = useAppSelector((state) => state.auth)
+  const [isModalOpen, setIsModalOpen]=useState(false)
 
   const { data: filesData , isLoading: LoadingFiles } = useQuery({
     queryFn: () =>
@@ -74,7 +78,7 @@ const CommitChanges = () => {
       <div className="code-diff__wrapper" style={{ display: 'flex' }}>
         <div className="files-list" style={{ width: '20%', borderRight: '1px solid #ccc', padding: '10px' }}>
           <ul style={{ listStyleType: 'none', padding: 0 }}>
-            {filesData?.map((file: { filename: string }) => (
+            {filesData?.files?.map((file: { filename: string }) => (
               <li key={file.filename} onClick={() => setSelectedFile(file.filename)} style={{ cursor: 'pointer' }}>
                 {file.filename}
               </li>
@@ -82,6 +86,10 @@ const CommitChanges = () => {
           </ul>
         </div>
         <div className="code-diff"  dangerouslySetInnerHTML={{ __html: diffHtml }} />
+        <Modal title={'Code Review'} className="editor__modal" open={isModalOpen} onCancel={()=>setIsModalOpen(false)}>
+          <StreamComponent/>
+        </Modal>
+        <ReviewButton title='review changes' onClick={()=>setIsModalOpen(true)}/>
       </div>
     </MainContainer>
   </MainLayout>

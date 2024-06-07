@@ -1,3 +1,4 @@
+@use '../../shared/assets/styles/abstracts/mixins' as *;
 .code-diff {
   width: 100%;
   overflow: hidden;
@@ -32,6 +33,45 @@
   }
   .d2h-cntx {
     background-color: rgba(70, 185, 242, 0.25) !important;
+  }
+}
+.editor__modal {
+  width: 45rem !important;
+  .anticon {
+    svg {
+      width: 1.8rem;
+      height: 1.8rem;
+      border: 1px solid #ffffff30;
+      padding: 0.5rem;
+      border-radius: 50%;
+      path {
+        fill: white;
+      }
+    }
+  }
+  .ant-modal-content {
+    @include GlassEffect();
+    background: rgba(45, 45, 45, 0.627);
+    height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 0 2rem rgba(249, 249, 249, 0.206);
+  }
+  .ant-modal-header {
+    background: transparent !important;
+  }
+  .ant-modal-title {
+    background: transparent;
+    color: white !important;
+    font-weight: 800 !important;
+    font-size: 1.2rem !important;
+  }
+  .ant-modal-body {
+    height: 98%;
+    border-radius: 1rem 1rem 0 0;
+    overflow: hidden;
+  }
+  .ant-modal-footer {
+    display: none;
   }
 }
 
