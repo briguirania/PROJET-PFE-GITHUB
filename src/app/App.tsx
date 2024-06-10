@@ -12,13 +12,10 @@ const App = () => {
   document.body.dir = i18n?.dir()
 
   const theme = useAppSelector((state) => state.theme.mode)
-  const dispatch=useAppDispatch()
-  useEffect(()=>{ dispatch(
-    login()
-  )
-
-  },[]
-  )
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(login())
+  }, [])
 
   return (
     <div id={'light'}>

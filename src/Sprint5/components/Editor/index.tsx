@@ -7,11 +7,12 @@ interface IFile {
     path: string
   }
   readyToUse?: string
+  language?:string
 }
-export default function Editor({ file, readyToUse }: IFile) {
+export default function Editor({ file, readyToUse , language}: IFile) {
   return (
     <div className="editor">
-            <HilightCode file={file} addLinesNumbers readyToUse={readyToUse} />
+            <HilightCode file={file} addLinesNumbers readyToUse={readyToUse} language={language} />
     </div>
   )
 }
