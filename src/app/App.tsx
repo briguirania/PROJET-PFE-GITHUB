@@ -15,12 +15,13 @@ const App = () => {
   const theme = useAppSelector((state) => state.theme.mode)
   useEffect(() => {
     dispatch(login())
+    console.log('hello world')
   }, [])
 
   return (
-    <div id={theme}>
+    <div id={theme} className='shared-app'>
       <Helmet>
-        <title>Welcome - Github code reviewer</title>
+        <title>Welcome - Rania's Github code reviewer</title>
       </Helmet>
       <QueryClientProvider client={queryClient}>{renderRoutes(routes)}</QueryClientProvider>
     </div>
