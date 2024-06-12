@@ -6,8 +6,8 @@ interface MainLayoutProps {
 }
 
 const AuthGuard = ({ children }: MainLayoutProps) => {
-  const { status, isAuthenticated } = useAppSelector((state) => state.auth)
-  const isShowChildren = isAuthenticated || status != 'succeeded'
+  const { isAuthenticated, status } = useAppSelector((state) => state.auth)
+  const isShowChildren = isAuthenticated || status === 'loading' || status === 'idle'
   return isShowChildren ? children : <Navigate to="/login" />
 }
 

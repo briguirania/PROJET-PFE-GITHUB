@@ -1,4 +1,3 @@
-import AuthProvider from './modules/auth/context/AuthProvider'
 import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter } from 'react-router-dom'
 import { store } from './modules/shared/store'
@@ -12,13 +11,11 @@ import './i18n'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <HelmetProvider>
     <Provider store={store}>
-      <AuthProvider>
-        <BrowserRouter>
-          <Suspense>
-            <App />
-          </Suspense>
-        </BrowserRouter>
-      </AuthProvider>
+      <BrowserRouter>
+        <Suspense>
+          <App />
+        </Suspense>
+      </BrowserRouter>
     </Provider>
   </HelmetProvider>
 )

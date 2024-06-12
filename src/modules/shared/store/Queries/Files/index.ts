@@ -1,6 +1,6 @@
 import axiosInstance from '@src/modules/auth/utils/axios'
 import { message } from 'antd'
-import { endpoints } from '../../routes/endPoints.routes'
+import { endpoints } from '../../routes/endpoints.routes'
 
 export async function fetchOneFileContent(props: {
   repo: string
